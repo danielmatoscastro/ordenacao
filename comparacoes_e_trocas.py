@@ -1,4 +1,5 @@
 from aleatorio import lista_aleatoria
+from math import floor
 
 
 def bubblesort(lista):
@@ -10,8 +11,21 @@ def bubblesort(lista):
                 lista[j] = aux
 
 
+def combsort(lista, fator=1.3):
+    gap = floor(len(lista) / fator)
+
+    while gap >= 1:
+        for k in range(0, gap):
+            for i in range(k+gap, len(lista), gap):
+                if lista[i] < lista[i-gap]:
+                    aux = lista[i]
+                    lista[i] = lista[i-gap]
+                    lista[i-gap] = aux
+        gap = floor(gap / fator)
+
+
 if __name__ == '__main__':
     lista = lista_aleatoria(10)
     print(lista)
-    bubblesort(lista)
+    combsort(lista)
     print(lista)
