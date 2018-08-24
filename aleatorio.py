@@ -1,3 +1,5 @@
+from random import randint
+
 
 def lista_aleatoria(n):
     lista = []
