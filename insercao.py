@@ -15,8 +15,7 @@ def insertionsort(lista):
 
 def busca_binaria(lista, inicio, fim, elemento):
     meio = ((fim - inicio) // 2) + inicio
-    #meio = meio if meio >= 0 else 0
-
+    
     if lista[meio] == elemento or inicio >= fim:
         return meio
     elif lista[meio] < elemento:
@@ -28,7 +27,7 @@ def busca_binaria(lista, inicio, fim, elemento):
 def insertionsort_busca_binaria(lista):
     for i in range(len(lista)):
         elemento = lista[i]
-        j = i-1 #if i-1 >= 0 else 0
+        j = i-1
 
         posicao = busca_binaria(lista, 0, j, elemento)
 
