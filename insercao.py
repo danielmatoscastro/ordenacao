@@ -32,10 +32,9 @@ def insertionsort_busca_binaria(lista):
 
         posicao = busca_binaria(lista, 0, j, elemento)
 
-        if posicao != i:
-            while j >= posicao:
-                lista[j+1] = lista[j]
-                j = j-1
+        while j >= posicao:
+            lista[j+1] = lista[j]
+            j = j-1
 
         if lista[posicao] <= elemento:
             lista[posicao+1] = elemento
@@ -70,5 +69,5 @@ if __name__ == '__main__':
     lista = lista_aleatoria(8)
     print(lista)
 
-    shell_sort(lista)
+    insertionsort_busca_binaria(lista)
     print(lista)
