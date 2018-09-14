@@ -11,23 +11,6 @@ def bubblesort(lista):
                 lista[j] = aux
 
 
-# Cortesia da wikipedia :)
-def combsort(lista, fator=1.3):
-    gap = floor(len(lista) / fator)
-
-    i = 0
-    while gap > 0 and i < len(lista)-1:
-        i = 0
-        while i + gap < len(lista):
-            if lista[i] < lista[i+gap]:
-                aux = lista[i]
-                lista[i] = lista[i+gap]
-                lista[i+gap] = aux
-            i = i + 1
-
-        gap = floor(gap / fator)
-
-
 def particiona(lista, pi, pf)?
     pp = pi
     i = pi + 1
