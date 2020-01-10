@@ -11,29 +11,30 @@ def bubblesort(lista):
                 lista[j] = aux
 
 
-def particiona(lista, pi, pf)?
+def particiona(lista, pi, pf):
     pp = pi
     i = pi + 1
     j = pf
 
     while j > i:
-        while c[i] < c[pp] and i < pf:
+        while lista[i] <= lista[pp] and i < pf:
             i += 1
-        while c[j] > c[pp] and j > pi:
-            i -= 1
-        if c[i] < c[j]:
-            aux = c[i]
-            c[i] = c[j]
-            c[j] = aux
-    aux = c[j]
-    c[j] = c[pp]
-    c[pp] = aux
+        while lista[j] > lista[pp] and j > pi:
+            j -= 1
+        if lista[i] > lista[j] and i < j:
+            aux = lista[i]
+            lista[i] = lista[j]
+            lista[j] = aux
+
+    aux = lista[j]
+    lista[j] = lista[pp]
+    lista[pp] = aux
 
     return j
 
 
 def quicksort(lista, inicio, fim):
-    if fim > inicio:
+    if inicio < fim:
         pivo = particiona(lista, inicio, fim)
         quicksort(lista, inicio, pivo-1)
         quicksort(lista, pivo+1, fim)
@@ -42,5 +43,5 @@ def quicksort(lista, inicio, fim):
 if __name__ == '__main__':
     lista = lista_aleatoria(10)
     print(lista)
-    quicksort
+    particiona(lista, 0, len(lista)-1)
     print(lista)
